@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This website is ini development.
-        Proof of jealousy from the 7th-grade cohort.</title>
+    <title>Proof of jealousy from the 7th-grade cohort. - Website is still in development</title>
     <style>
         :root {
             --bg-start: #0f0c29;
@@ -55,14 +54,12 @@
             min-height: 100vh;
             overflow-x: hidden;
             line-height: 1.6;
-            /* Animated gradient background */
             background: linear-gradient(135deg, #0f0c29, #1a1a3e, #0d0d2b, #14103a, #0f0c29);
             background-size: 400% 400%;
             animation: gradientShift 20s ease-in-out infinite;
             position: relative;
         }
 
-        /* Subtle animated grain/particle overlay */
         body::before {
             content: '';
             position: fixed;
@@ -77,21 +74,34 @@
         }
 
         @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            25% { background-position: 100% 0%; }
-            50% { background-position: 100% 100%; }
-            75% { background-position: 0% 100%; }
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            25% {
+                background-position: 100% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            75% {
+                background-position: 0% 100%;
+            }
         }
 
         @keyframes orbFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(2%, -1%) scale(1.1); }
-            66% { transform: translate(-1%, 1%) scale(0.95); }
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(2%, -1%) scale(1.1);
+            }
+            66% {
+                transform: translate(-1%, 1%) scale(0.95);
+            }
         }
 
-        /* ─────────────────────────────────────────────
-         HEADER - Glassmorphism
-        ───────────────────────────────────────────── */
         .header {
             position: sticky;
             top: 16px;
@@ -128,30 +138,14 @@
         }
 
         @keyframes headerSlideIn {
-            from { opacity: 0; transform: translateY(-40px) scale(0.92); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .header-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: var(--radius-sm);
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            box-shadow: 0 4px 16px rgba(108, 92, 231, 0.4);
-        }
-
-        .header-icon svg {
-            width: 22px;
-            height: 22px;
-            fill: none;
-            stroke: #fff;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+            from {
+                opacity: 0;
+                transform: translateY(-40px) scale(0.92);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .header-title {
@@ -163,9 +157,6 @@
             line-height: 1.3;
         }
 
-        /* ─────────────────────────────────────────────
-         GALLERY - CSS Columns Masonry
-        ───────────────────────────────────────────── */
         .gallery-wrapper {
             position: relative;
             z-index: 1;
@@ -176,8 +167,14 @@
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .gallery {
@@ -187,7 +184,6 @@
             list-style: none;
         }
 
-        /* Gallery item wrapper */
         .gallery-item {
             break-inside: avoid;
             -webkit-column-break-inside: avoid;
@@ -205,13 +201,11 @@
             overflow: hidden;
         }
 
-        /* When image enters viewport & loads */
         .gallery-item.revealed {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Hover effects - GPU accelerated */
         .gallery-item:hover {
             box-shadow: var(--shadow-hover);
             border-color: rgba(255, 255, 255, 0.25);
@@ -225,7 +219,6 @@
             transition: transform 0.1s ease-out;
         }
 
-        /* Image inside card */
         .gallery-item img {
             display: block;
             width: 100%;
@@ -241,7 +234,6 @@
             transform: scale(1.06);
         }
 
-        /* Placeholder shimmer while loading */
         .gallery-item .img-placeholder {
             position: absolute;
             inset: 0;
@@ -263,13 +255,15 @@
         }
 
         @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
         }
 
-        /* ─────────────────────────────────────────────
-         MESSAGE BOX - Premium Glass Card
-        ───────────────────────────────────────────── */
+        /* Message Box */
         .message-box {
             position: relative;
             z-index: 1;
@@ -295,7 +289,7 @@
             font-size: 0.95rem;
             line-height: 1.8;
             color: var(--text-secondary);
-            text-align: center;
+            text-align: left;
             letter-spacing: 0.01em;
         }
 
@@ -310,8 +304,12 @@
             font-weight: 500;
         }
 
+        .message-paragraph {
+            margin-bottom: 16px;
+        }
+
         .message-signature {
-            margin-top: 16px;
+            margin-top: 20px;
             font-size: 0.9rem;
             font-weight: 600;
             color: #fff;
@@ -319,9 +317,7 @@
             letter-spacing: 0.02em;
         }
 
-        /* ─────────────────────────────────────────────
-         MODAL - Fullscreen Image Viewer
-        ───────────────────────────────────────────── */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -349,7 +345,6 @@
             transition: opacity 0.25s ease-in;
         }
 
-        /* Modal content wrapper - handles swipe-down transform */
         .modal-content {
             position: relative;
             display: flex;
@@ -369,7 +364,6 @@
             transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* Image container - handles zoom/pan transforms */
         .modal-image-stage {
             position: relative;
             display: flex;
@@ -410,7 +404,6 @@
             transition: opacity 0.3s ease-out;
         }
 
-        /* Close button */
         .modal-close-btn {
             position: fixed;
             top: 20px;
@@ -451,7 +444,6 @@
             stroke-linecap: round;
         }
 
-        /* Reset zoom button */
         .modal-reset-btn {
             position: fixed;
             bottom: 30px;
@@ -505,7 +497,6 @@
             stroke-linejoin: round;
         }
 
-        /* Zoom level indicator */
         .zoom-indicator {
             position: fixed;
             top: 24px;
@@ -530,9 +521,7 @@
             opacity: 1;
         }
 
-        /* ─────────────────────────────────────────────
-         FOOTER
-        ───────────────────────────────────────────── */
+        /* Footer */
         .premium-footer {
             position: relative;
             z-index: 1;
@@ -554,7 +543,6 @@
             letter-spacing: 0.04em;
         }
 
-        /* Premium gradient button */
         .creator-btn {
             display: inline-flex;
             align-items: center;
@@ -581,8 +569,13 @@
         }
 
         @keyframes btnPulse {
-            0%, 100% { box-shadow: 0 8px 28px rgba(108, 92, 231, 0.4); }
-            50% { box-shadow: 0 12px 40px rgba(108, 92, 231, 0.65), 0 0 60px rgba(162, 155, 254, 0.3); }
+            0%,
+            100% {
+                box-shadow: 0 8px 28px rgba(108, 92, 231, 0.4);
+            }
+            50% {
+                box-shadow: 0 12px 40px rgba(108, 92, 231, 0.65), 0 0 60px rgba(162, 155, 254, 0.3);
+            }
         }
 
         .creator-btn:hover {
@@ -611,7 +604,6 @@
             transform: translateX(3px);
         }
 
-        /* Ripple element */
         .ripple {
             position: absolute;
             border-radius: 50%;
@@ -622,69 +614,180 @@
         }
 
         @keyframes rippleEffect {
-            to { transform: scale(4); opacity: 0; }
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
         }
 
-        /* ─────────────────────────────────────────────
-         RESPONSIVE MEDIA QUERIES
-        ───────────────────────────────────────────── */
+        /* Responsive */
         @media (max-width: 1200px) {
-            .gallery { column-count: 3; column-gap: 14px; }
-            .gallery-item { margin-bottom: 14px; }
+            .gallery {
+                column-count: 3;
+                column-gap: 14px;
+            }
+            .gallery-item {
+                margin-bottom: 14px;
+            }
         }
 
         @media (max-width: 768px) {
-            .gallery { column-count: 2; column-gap: 10px; }
-            .gallery-item { margin-bottom: 10px; }
-            .header-inner { padding: 12px 20px; gap: 10px; }
-            .header-title { font-size: 1.15rem; }
-            .header-icon { width: 34px; height: 34px; }
-            .header-icon svg { width: 18px; height: 18px; }
-            .message-box { padding: 20px 22px; margin: 0 12px 24px; }
-            .message-text { font-size: 0.88rem; line-height: 1.7; }
-            .modal-close-btn { top: 12px; right: 12px; width: 38px; height: 38px; }
-            .modal-image-stage { max-width: 96vw; max-height: 82vh; }
-            .modal-image-stage img { max-height: 78vh; }
-            .modal-reset-btn { bottom: 20px; padding: 8px 16px; font-size: 0.78rem; }
-            .creator-btn { padding: 12px 26px; font-size: 0.9rem; }
+            .gallery {
+                column-count: 2;
+                column-gap: 10px;
+            }
+            .gallery-item {
+                margin-bottom: 10px;
+            }
+            .header-inner {
+                padding: 12px 20px;
+                gap: 10px;
+            }
+            .header-title {
+                font-size: 1.15rem;
+            }
+            .message-box {
+                padding: 20px 22px;
+                margin: 0 12px 24px;
+            }
+            .message-text {
+                font-size: 0.88rem;
+                line-height: 1.7;
+            }
+            .modal-close-btn {
+                top: 12px;
+                right: 12px;
+                width: 38px;
+                height: 38px;
+            }
+            .modal-image-stage {
+                max-width: 96vw;
+                max-height: 82vh;
+            }
+            .modal-image-stage img {
+                max-height: 78vh;
+            }
+            .modal-reset-btn {
+                bottom: 20px;
+                padding: 8px 16px;
+                font-size: 0.78rem;
+            }
+            .creator-btn {
+                padding: 12px 26px;
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
-            .gallery { column-count: 1; column-gap: 0; }
-            .gallery-item { margin-bottom: 12px; border-radius: var(--radius-sm); }
-            .gallery-item img, .gallery-item .img-placeholder { border-radius: var(--radius-sm); }
-            .gallery-wrapper { padding: 12px 10px 30px; }
-            .header { padding: 0 12px; width: calc(100% - 24px); }
-            .header-inner { padding: 10px 16px; gap: 8px; border-radius: var(--radius-lg); }
-            .header-title { font-size: 1rem; }
-            .header-icon { width: 30px; height: 30px; border-radius: 8px; }
-            .header-icon svg { width: 16px; height: 16px; }
-            .message-box { padding: 16px 18px; margin: 0 8px 20px; border-radius: var(--radius-md); }
-            .message-text { font-size: 0.82rem; line-height: 1.65; }
-            .message-signature { font-size: 0.8rem; }
-            .modal-image-stage { max-width: 98vw; max-height: 78vh; border-radius: var(--radius-md); }
-            .modal-image-stage img { max-height: 74vh; border-radius: var(--radius-sm); }
-            .modal-close-btn { top: 8px; right: 8px; width: 34px; height: 34px; }
-            .modal-close-btn svg { width: 17px; height: 17px; }
-            .modal-reset-btn { bottom: 16px; padding: 7px 14px; font-size: 0.72rem; gap: 6px; }
-            .modal-reset-btn svg { width: 14px; height: 14px; }
-            .premium-footer { padding: 30px 16px 40px; }
-            .creator-btn { padding: 12px 24px; font-size: 0.85rem; gap: 8px; }
-            .creator-btn svg { width: 16px; height: 16px; }
-            .zoom-indicator { top: 16px; font-size: 0.7rem; padding: 4px 10px; }
+            .gallery {
+                column-count: 1;
+                column-gap: 0;
+            }
+            .gallery-item {
+                margin-bottom: 12px;
+                border-radius: var(--radius-sm);
+            }
+            .gallery-item img,
+            .gallery-item .img-placeholder {
+                border-radius: var(--radius-sm);
+            }
+            .gallery-wrapper {
+                padding: 12px 10px 30px;
+            }
+            .header {
+                padding: 0 12px;
+                width: calc(100% - 24px);
+            }
+            .header-inner {
+                padding: 10px 16px;
+                gap: 8px;
+                border-radius: var(--radius-lg);
+            }
+            .header-title {
+                font-size: 1rem;
+            }
+            .message-box {
+                padding: 16px 18px;
+                margin: 0 8px 20px;
+                border-radius: var(--radius-md);
+            }
+            .message-text {
+                font-size: 0.82rem;
+                line-height: 1.65;
+            }
+            .message-signature {
+                font-size: 0.8rem;
+            }
+            .modal-image-stage {
+                max-width: 98vw;
+                max-height: 78vh;
+                border-radius: var(--radius-md);
+            }
+            .modal-image-stage img {
+                max-height: 74vh;
+                border-radius: var(--radius-sm);
+            }
+            .modal-close-btn {
+                top: 8px;
+                right: 8px;
+                width: 34px;
+                height: 34px;
+            }
+            .modal-close-btn svg {
+                width: 17px;
+                height: 17px;
+            }
+            .modal-reset-btn {
+                bottom: 16px;
+                padding: 7px 14px;
+                font-size: 0.72rem;
+                gap: 6px;
+            }
+            .modal-reset-btn svg {
+                width: 14px;
+                height: 14px;
+            }
+            .premium-footer {
+                padding: 30px 16px 40px;
+            }
+            .creator-btn {
+                padding: 12px 24px;
+                font-size: 0.85rem;
+                gap: 8px;
+            }
+            .creator-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+            .zoom-indicator {
+                top: 16px;
+                font-size: 0.7rem;
+                padding: 4px 10px;
+            }
         }
 
         @media (max-width: 360px) {
-            .header-inner { padding: 8px 12px; gap: 6px; }
-            .header-title { font-size: 0.9rem; }
-            .header-icon { width: 26px; height: 26px; }
-            .gallery-item { margin-bottom: 10px; }
-            .gallery-wrapper { padding: 8px 6px 24px; }
-            .message-box { padding: 14px 14px; }
-            .message-text { font-size: 0.78rem; }
+            .header-inner {
+                padding: 8px 12px;
+                gap: 6px;
+            }
+            .header-title {
+                font-size: 0.9rem;
+            }
+            .gallery-item {
+                margin-bottom: 10px;
+            }
+            .gallery-wrapper {
+                padding: 8px 6px 24px;
+            }
+            .message-box {
+                padding: 14px 14px;
+            }
+            .message-text {
+                font-size: 0.78rem;
+            }
         }
 
-        /* Reduced motion preference */
         @media (prefers-reduced-motion: reduce) {
             .gallery-item,
             .gallery-item:hover,
@@ -698,82 +801,64 @@
                 transition-duration: 0.01ms !important;
                 animation-duration: 0.01ms !important;
             }
-            .gallery-item:hover { transform: none; }
-            .gallery-item:hover img { transform: none; }
+            .gallery-item:hover {
+                transform: none;
+            }
+            .gallery-item:hover img {
+                transform: none;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ═══════════════════════════════════════════
-     HEADER - Glassmorphism
-    ════════════════════════════════════════════ -->
     <header class="header">
         <div class="header-inner">
-            <!-- Camera icon SVG inline -->
-            <div class="header-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="5" width="20" height="15" rx="3"/>
-                    <circle cx="12" cy="12.5" r="4"/>
-                    <circle cx="17" cy="9" r="1" fill="#fff" stroke="none"/>
-                </svg>
-            </div>
             <div>
                 <div class="header-title">Proof of jealousy from the 7th-grade cohort.</div>
             </div>
         </div>
     </header>
 
-    <!-- ═══════════════════════════════════════════
-     GALLERY - Populated by JavaScript
-    ════════════════════════════════════════════ -->
     <main class="gallery-wrapper">
         <div class="gallery" id="gallery" aria-label="Photo gallery grid"></div>
     </main>
 
-    <!-- ═══════════════════════════════════════════
-     MESSAGE BOX - Premium Glass Card
-    ════════════════════════════════════════════ -->
     <div class="message-box">
-        <p class="message-text">
-            Aku tidak dapat menjelaskan seluruh kejadian secara lengkap dan mendalam karena setiap pihak memiliki cerita, pengalaman, dan sudut pandang masing-masing. Namun, sejak kelas 7 sudah terdapat beberapa permasalahan yang membuat sebagian siswa merasa bahwa <strong>..........</strong> kurang adil dalam beberapa hal.
+        <div class="message-text">
+            <p class="message-paragraph">Aku tidak dapat menjelaskan seluruh kejadian secara lengkap dan mendalam karena setiap pihak memiliki cerita, pengalaman, dan sudut pandang masing-masing. Namun, sejak kelas 7 sudah terdapat beberapa permasalahan yang membuat sebagian siswa merasa bahwa <strong>..........</strong> kurang adil dalam beberapa hal.</p>
 
-Beberapa kejadian tersebut kemudian berkembang menjadi perbedaan pendapat antara beberapa pihak. Bahkan, angkatan <em>SEBELUM MEREKA</em> juga pernah mengalami situasi di mana mereka mendapatkan <em>DISINDIR</em> atau menjadi bahan pembicaraan. Hal ini menunjukkan bahwa permasalahan tersebut bukan hanya terjadi pada satu kelompok saja, melainkan sudah berlangsung dalam beberapa periode.
+            <p class="message-paragraph">Beberapa kejadian tersebut kemudian berkembang menjadi perbedaan pendapat antara beberapa pihak. Bahkan, angkatan <em>SEBELUM MEREKA</em> juga pernah mengalami situasi di mana mereka mendapatkan <em>DISINDIR</em> atau menjadi bahan pembicaraan. Hal ini menunjukkan bahwa permasalahan tersebut bukan hanya terjadi pada satu kelompok saja, melainkan sudah berlangsung dalam beberapa periode.</p>
 
-Perlu diketahui bahwa kakak kelas yang sering dianggap salah atau menjadi pihak yang disorot juga memiliki alasan, pengalaman, dan perjuangan mereka sendiri. Tidak semua tindakan yang dilakukan oleh kakak kelas bertujuan untuk menjatuhkan atau merendahkan. Terkadang, sesuatu yang dianggap sebagai sindiran oleh satu pihak bisa saja berasal dari pengalaman, candaan, atau bentuk teguran yang tidak tersampaikan dengan cara yang tepat.
+            <p class="message-paragraph">Perlu diketahui bahwa kakak kelas yang sering dianggap salah atau menjadi pihak yang disorot juga memiliki alasan, pengalaman, dan perjuangan mereka sendiri. Tidak semua tindakan yang dilakukan oleh kakak kelas bertujuan untuk menjatuhkan atau merendahkan. Terkadang, sesuatu yang dianggap sebagai sindiran oleh satu pihak bisa saja berasal dari pengalaman, candaan, atau bentuk teguran yang tidak tersampaikan dengan cara yang tepat.</p>
 
-Namun, di sisi lain, setiap pihak tetap harus melakukan evaluasi. Termasuk bagi beberapa siswa kelas 7 yang mungkin masih dalam proses beradaptasi dengan lingkungan baru. Terkadang, kurangnya pemahaman terhadap situasi sebelumnya dapat menyebabkan kesimpulan yang terburu-buru. Tidak semua hal harus langsung dianggap sebagai bentuk ketidakadilan sebelum mengetahui seluruh fakta yang ada.
+            <p class="message-paragraph">Namun, di sisi lain, setiap pihak tetap harus melakukan evaluasi. Termasuk bagi beberapa siswa kelas 7 yang mungkin masih dalam proses beradaptasi dengan lingkungan baru. Terkadang, kurangnya pemahaman terhadap situasi sebelumnya dapat menyebabkan kesimpulan yang terburu-buru. Tidak semua hal harus langsung dianggap sebagai bentuk ketidakadilan sebelum mengetahui seluruh fakta yang ada.</p>
 
-Website ini <strong>bukan</strong> dibuat untuk memperbesar masalah, mencari kesalahan seseorang, atau membuat konflik menjadi lebih panjang. Tujuan utama website ini adalah <strong>"Mempermudah"</strong> dalam mencari, menyusun, dan melihat bukti yang berkaitan dengan suatu kejadian agar informasi tidak hanya berdasarkan rumor, asumsi, atau cerita sepihak.
+            <p class="message-paragraph">Website ini <strong>bukan</strong> dibuat untuk memperbesar masalah, mencari kesalahan seseorang, atau membuat konflik menjadi lebih panjang. Tujuan utama website ini adalah <strong>"Mempermudah"</strong> dalam mencari, menyusun, dan melihat bukti yang berkaitan dengan suatu kejadian agar informasi tidak hanya berdasarkan rumor, asumsi, atau cerita sepihak.</p>
 
-<strong>Semua pihak memiliki kemungkinan untuk melakukan kesalahan.</strong> Baik pihak yang menyindir maupun pihak yang merasa disindir dapat memiliki kekurangan masing-masing. Oleh karena itu, website ini dibuat sebagai media dokumentasi dan penyimpanan informasi, bukan sebagai alat untuk menyerang, mempermalukan, atau menjatuhkan individu maupun kelompok tertentu.
+            <p class="message-paragraph"><strong>Semua pihak memiliki kemungkinan untuk melakukan kesalahan.</strong> Baik pihak yang menyindir maupun pihak yang merasa disindir dapat memiliki kekurangan masing-masing. Oleh karena itu, website ini dibuat sebagai media dokumentasi dan penyimpanan informasi, bukan sebagai alat untuk menyerang, mempermalukan, atau menjatuhkan individu maupun kelompok tertentu.</p>
 
-<strong>Website ini bersifat open source.</strong> Seluruh kode sumber website dapat dilihat, dipelajari, digunakan, dikembangkan, dan dimodifikasi oleh siapa saja sesuai dengan aturan yang berlaku.
+            <p class="message-paragraph"><strong>Website ini bersifat open source.</strong> Seluruh kode sumber website dapat dilihat, dipelajari, digunakan, dikembangkan, dan dimodifikasi oleh siapa saja sesuai dengan aturan yang berlaku.</p>
 
-Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, setiap orang diperbolehkan menggunakan, menyalin, mengubah, menggabungkan, menerbitkan, dan mendistribusikan proyek ini, selama tetap mencantumkan pemberitahuan hak cipta serta mengikuti ketentuan yang terdapat dalam lisensi MIT.
+            <p class="message-paragraph">Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, setiap orang diperbolehkan menggunakan, menyalin, mengubah, menggabungkan, menerbitkan, dan mendistribusikan proyek ini, selama tetap mencantumkan pemberitahuan hak cipta serta mengikuti ketentuan yang terdapat dalam lisensi MIT.</p>
 
-<strong>Tujuan akhir dari website ini bukan untuk mencari siapa yang paling benar atau siapa yang paling salah, tetapi untuk memberikan tempat yang lebih terstruktur agar fakta dapat dilihat dengan lebih jelas.</strong>
-        </p>
+            <p class="message-paragraph"><strong>Tujuan akhir dari website ini bukan untuk mencari siapa yang paling benar atau siapa yang paling salah, tetapi untuk memberikan tempat yang lebih terstruktur agar fakta dapat dilihat dengan lebih jelas.</strong></p>
+        </div>
         <p class="message-signature">Terima Kasih.</p>
     </div>
 
-    <!-- ═══════════════════════════════════════════
-     MODAL - Fullscreen Image Viewer
-    ════════════════════════════════════════════ -->
     <div class="modal-overlay" id="modalOverlay" aria-hidden="true" role="dialog" aria-label="Image viewer">
         <div class="modal-content" id="modalContent">
             <div class="modal-image-stage" id="modalImageStage">
                 <img src="" alt="Enlarged view" id="modalImage" draggable="false" />
             </div>
         </div>
-        <!-- Close button -->
         <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close viewer" title="Close (ESC)">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <line x1="6" y1="6" x2="18" y2="18"/>
                 <line x1="18" y1="6" x2="6" y2="18"/>
             </svg>
         </button>
-        <!-- Reset zoom button -->
         <button class="modal-reset-btn" id="modalResetBtn" aria-label="Reset zoom" title="Reset zoom">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="12" r="1.5" fill="#fff" stroke="none"/>
@@ -785,13 +870,9 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
             </svg>
             Reset Zoom
         </button>
-        <!-- Zoom level indicator -->
         <div class="zoom-indicator" id="zoomIndicator">100%</div>
     </div>
 
-    <!-- ═══════════════════════════════════════════
-     FOOTER
-    ════════════════════════════════════════════ -->
     <footer class="premium-footer">
         <p class="footer-credit">Curated by <strong>BrechQ</strong></p>
         <a href="https://brechq.site" target="_blank" rel="noopener noreferrer" class="creator-btn" id="creatorBtn" aria-label="Visit BrechQ's site">
@@ -806,9 +887,6 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
 
     <script>
         (function() {
-            // ───────────────────────────────────────
-            // DOM ELEMENT REFERENCES
-            // ───────────────────────────────────────
             const galleryEl = document.getElementById('gallery');
             const modalOverlay = document.getElementById('modalOverlay');
             const modalContent = document.getElementById('modalContent');
@@ -819,76 +897,51 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
             const zoomIndicator = document.getElementById('zoomIndicator');
             const creatorBtn = document.getElementById('creatorBtn');
 
-            // ───────────────────────────────────────
-            // STATE VARIABLES
-            // ───────────────────────────────────────
             const TOTAL_IMAGES = 30;
             let currentScale = 1;
             let currentTranslateX = 0;
             let currentTranslateY = 0;
             let isModalOpen = false;
             let isZoomed = false;
-            // Panning state
             let isPanning = false;
             let panStartX = 0;
             let panStartY = 0;
             let panStartTranslateX = 0;
             let panStartTranslateY = 0;
-            // Pinch state
             let pinchStartDistance = 0;
             let pinchStartScale = 1;
             let pinchMidX = 0;
             let pinchMidY = 0;
-            // Swipe-to-close state
             let swipeStartY = 0;
             let swipeDeltaY = 0;
             let isSwipingDown = false;
-            // Double-tap detection
             let lastTapTime = 0;
-            const DOUBLE_TAP_THRESHOLD = 300; // ms
-            // Track if we're in a zoom transition
-            let isZoomTransitioning = false;
+            const DOUBLE_TAP_THRESHOLD = 300;
 
-            // ───────────────────────────────────────
-            // BUILD GALLERY ITEMS
-            // ───────────────────────────────────────
             function buildGallery() {
                 const fragment = document.createDocumentFragment();
-
                 for (let i = 1; i <= TOTAL_IMAGES; i++) {
                     const item = document.createElement('div');
                     item.className = 'gallery-item';
                     item.setAttribute('data-index', i);
-
-                    // Placeholder shimmer element
                     const placeholder = document.createElement('div');
                     placeholder.className = 'img-placeholder';
                     item.appendChild(placeholder);
-
-                    // Image element with lazy loading
                     const img = document.createElement('img');
                     img.src = `${i}.jpeg`;
                     img.alt = `Gallery image ${i}`;
                     img.loading = 'lazy';
                     img.setAttribute('decoding', 'async');
                     img.setAttribute('fetchpriority', i <= 6 ? 'high' : 'low');
-
-                    // On image load, mark the parent as loaded (hides shimmer)
                     img.addEventListener('load', function() {
                         item.classList.add('loaded');
                     }, { once: true });
-
-                    // If image is already cached/loaded
                     if (img.complete) {
                         item.classList.add('loaded');
                     }
-
-                    // Click handler to open modal
                     item.addEventListener('click', function(e) {
                         openModal(i, e);
                     });
-
-                    // Keyboard accessibility
                     item.setAttribute('tabindex', '0');
                     item.setAttribute('role', 'button');
                     item.setAttribute('aria-label', `View image ${i} fullscreen`);
@@ -898,24 +951,18 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                             openModal(i, e);
                         }
                     });
-
                     item.appendChild(img);
                     fragment.appendChild(item);
                 }
-
                 galleryEl.appendChild(fragment);
             }
 
-            // ───────────────────────────────────────
-            // INTERSECTION OBSERVER - Reveal animation
-            // ───────────────────────────────────────
             function setupIntersectionObserver() {
                 const observerOptions = {
                     root: null,
                     rootMargin: '120px 0px',
                     threshold: 0.05,
                 };
-
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
@@ -924,45 +971,30 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                         }
                     });
                 }, observerOptions);
-
                 const items = galleryEl.querySelectorAll('.gallery-item');
                 items.forEach((item) => observer.observe(item));
                 return observer;
             }
 
-            // ───────────────────────────────────────
-            // MODAL - OPEN
-            // ───────────────────────────────────────
             function openModal(imageIndex, triggerEvent) {
                 if (isModalOpen) return;
-
                 const imgSrc = `${imageIndex}.jpeg`;
                 modalImage.src = imgSrc;
                 modalImage.alt = `Gallery image ${imageIndex} - Fullscreen view`;
-
-                // Reset all transforms
                 resetZoom(false);
-
-                // Show modal
                 modalOverlay.setAttribute('aria-hidden', 'false');
                 modalOverlay.classList.add('active');
                 modalOverlay.classList.remove('closing');
                 document.body.style.overflow = 'hidden';
                 isModalOpen = true;
-
                 requestAnimationFrame(() => {
                     modalCloseBtn.focus();
                 });
-
                 modalOverlay.setAttribute('data-current-index', imageIndex);
             }
 
-            // ───────────────────────────────────────
-            // MODAL - CLOSE
-            // ───────────────────────────────────────
             function closeModal(animate = true) {
                 if (!isModalOpen) return;
-
                 if (animate) {
                     modalOverlay.classList.add('closing');
                     const onTransitionEnd = () => {
@@ -993,9 +1025,6 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                 modalImage.src = '';
             }
 
-            // ───────────────────────────────────────
-            // ZOOM & PAN - Core Functions
-            // ───────────────────────────────────────
             function resetZoom(animate = true) {
                 currentScale = 1;
                 currentTranslateX = 0;
@@ -1015,19 +1044,17 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                     modalImageStage.classList.add('zooming');
                     modalImageStage.style.transition = 'none';
                 }
-
                 const clamped = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
                 currentTranslateX = clamped.x;
                 currentTranslateY = clamped.y;
-
                 modalImageStage.style.transform =
                     `translate3d(${currentTranslateX}px, ${currentTranslateY}px, 0) scale3d(${currentScale}, ${currentScale}, 1)`;
-
                 if (!animate) {
                     requestAnimationFrame(() => {
                         requestAnimationFrame(() => {
                             modalImageStage.classList.remove('zooming');
-                            modalImageStage.style.transition = 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+                            modalImageStage.style.transition =
+                                'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
                         });
                     });
                 }
@@ -1035,18 +1062,15 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
 
             function clampTranslation(tx, ty, scale) {
                 if (scale <= 1) return { x: 0, y: 0 };
-
                 const stageRect = modalImageStage.getBoundingClientRect();
                 const imgNatural = {
                     width: modalImage.naturalWidth || stageRect.width,
                     height: modalImage.naturalHeight || stageRect.height,
                 };
-
                 const stageW = stageRect.width;
                 const stageH = stageRect.height;
                 const imgAspect = imgNatural.width / imgNatural.height;
                 const stageAspect = stageW / stageH;
-
                 let baseImgW, baseImgH;
                 if (imgAspect > stageAspect) {
                     baseImgW = stageW;
@@ -1055,13 +1079,10 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                     baseImgH = stageH;
                     baseImgW = stageH * imgAspect;
                 }
-
                 const scaledW = baseImgW * scale;
                 const scaledH = baseImgH * scale;
-
                 const maxTx = Math.max(0, (scaledW - stageW * 0.3) / 2);
                 const maxTy = Math.max(0, (scaledH - stageH * 0.3) / 2);
-
                 return {
                     x: Math.max(-maxTx, Math.min(maxTx, tx)),
                     y: Math.max(-maxTy, Math.min(maxTy, ty)),
@@ -1094,30 +1115,22 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                 const stageRect = modalImageStage.getBoundingClientRect();
                 const relX = clientX - stageRect.left;
                 const relY = clientY - stageRect.top;
-
                 const pointStageX = (relX - currentTranslateX) / currentScale;
                 const pointStageY = (relY - currentTranslateY) / currentScale;
-
                 const newTranslateX = relX - pointStageX * newScale;
                 const newTranslateY = relY - pointStageY * newScale;
-
                 currentScale = newScale;
                 currentTranslateX = newTranslateX;
                 currentTranslateY = newTranslateY;
                 isZoomed = currentScale > 1.05;
-
                 updateModalTransform(false);
                 updateResetButtonVisibility();
                 updateZoomIndicator();
             }
 
-            // ───────────────────────────────────────
-            // MOUSE WHEEL ZOOM (Desktop)
-            // ───────────────────────────────────────
             function handleWheel(e) {
                 if (!isModalOpen) return;
                 e.preventDefault();
-
                 const delta = -e.deltaY;
                 const zoomFactor = 1.08;
                 let newScale;
@@ -1126,17 +1139,12 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                 } else {
                     newScale = Math.max(currentScale / zoomFactor, 0.5);
                 }
-
                 zoomTowardPoint(newScale, e.clientX, e.clientY);
             }
 
-            // ───────────────────────────────────────
-            // DOUBLE-CLICK / DOUBLE-TAP ZOOM
-            // ───────────────────────────────────────
             function handleDoubleClick(e) {
                 if (!isModalOpen) return;
                 e.preventDefault();
-
                 if (isZoomed) {
                     resetZoom(true);
                 } else {
@@ -1146,13 +1154,9 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                 }
             }
 
-            // ───────────────────────────────────────
-            // PAN START (mouse drag on zoomed image)
-            // ───────────────────────────────────────
             function handlePanStart(e) {
                 if (!isModalOpen || !isZoomed) return;
                 if (e.type === 'mousedown' && e.button !== 0) return;
-
                 e.preventDefault();
                 isPanning = true;
                 panStartX = e.clientX;
@@ -1167,17 +1171,13 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
             function handlePanMove(e) {
                 if (!isPanning) return;
                 e.preventDefault();
-
                 const dx = e.clientX - panStartX;
                 const dy = e.clientY - panStartY;
-
                 currentTranslateX = panStartTranslateX + dx;
                 currentTranslateY = panStartTranslateY + dy;
-
                 const clamped = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
                 currentTranslateX = clamped.x;
                 currentTranslateY = clamped.y;
-
                 modalImageStage.style.transform =
                     `translate3d(${currentTranslateX}px, ${currentTranslateY}px, 0) scale3d(${currentScale}, ${currentScale}, 1)`;
             }
@@ -1187,22 +1187,17 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                 isPanning = false;
                 modalImageStage.classList.remove('panning');
                 modalImageStage.classList.remove('zooming');
-                modalImageStage.style.transition = 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
-
+                modalImageStage.style.transition =
+                    'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
                 const clamped = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
                 currentTranslateX = clamped.x;
                 currentTranslateY = clamped.y;
                 updateModalTransform(true);
             }
 
-            // ───────────────────────────────────────
-            // TOUCH HANDLING (Pinch, Swipe, Pan)
-            // ───────────────────────────────────────
             function handleTouchStart(e) {
                 if (!isModalOpen) return;
-
                 const touches = e.touches;
-
                 if (touches.length === 2) {
                     e.preventDefault();
                     isPanning = false;
@@ -1232,14 +1227,16 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                         lastTapTime = 0;
                         isSwipingDown = false;
                         modalContent.classList.remove('swiping');
-                        modalContent.style.transition = 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+                        modalContent.style.transition =
+                            'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
                         modalContent.style.transform = '';
                     } else if (now - lastTapTime < DOUBLE_TAP_THRESHOLD && isZoomed) {
                         resetZoom(true);
                         lastTapTime = 0;
                         isSwipingDown = false;
                         modalContent.classList.remove('swiping');
-                        modalContent.style.transition = 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+                        modalContent.style.transition =
+                            'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
                         modalContent.style.transform = '';
                     }
                     lastTapTime = now;
@@ -1248,35 +1245,29 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
 
             function handleTouchMove(e) {
                 if (!isModalOpen) return;
-
                 const touches = e.touches;
-
                 if (touches.length === 2 && pinchStartDistance > 0) {
                     e.preventDefault();
                     const dx = touches[0].clientX - touches[1].clientX;
                     const dy = touches[0].clientY - touches[1].clientY;
                     const currentDistance = Math.hypot(dx, dy);
-
                     if (pinchStartDistance > 0) {
                         const scaleRatio = currentDistance / pinchStartDistance;
                         let newScale = pinchStartScale * scaleRatio;
                         newScale = Math.max(0.5, Math.min(5, newScale));
-
                         const stageRect = modalImageStage.getBoundingClientRect();
                         const relX = pinchMidX - stageRect.left;
                         const relY = pinchMidY - stageRect.top;
                         const pointStageX = (relX - currentTranslateX) / currentScale;
                         const pointStageY = (relY - currentTranslateY) / currentScale;
-
                         currentScale = newScale;
                         currentTranslateX = relX - pointStageX * newScale;
                         currentTranslateY = relY - pointStageY * newScale;
                         isZoomed = currentScale > 1.05;
-
-                        const clamped = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
+                        const clamped = clampTranslation(currentTranslateX, currentTranslateY,
+                            currentScale);
                         currentTranslateX = clamped.x;
                         currentTranslateY = clamped.y;
-
                         modalImageStage.style.transform =
                             `translate3d(${currentTranslateX}px, ${currentTranslateY}px, 0) scale3d(${currentScale}, ${currentScale}, 1)`;
                         updateResetButtonVisibility();
@@ -1288,7 +1279,6 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                 } else if (touches.length === 1 && isSwipingDown && !isZoomed) {
                     const currentY = touches[0].clientY;
                     swipeDeltaY = currentY - swipeStartY;
-
                     if (swipeDeltaY > 0) {
                         const damped = swipeDeltaY * 0.7;
                         modalContent.style.transform = `translateY(${damped}px)`;
@@ -1303,25 +1293,22 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
 
             function handleTouchEnd(e) {
                 if (!isModalOpen) return;
-
                 if (pinchStartDistance > 0) {
                     pinchStartDistance = 0;
                     modalImageStage.classList.remove('zooming');
-                    modalImageStage.style.transition = 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+                    modalImageStage.style.transition =
+                        'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
                     const clamped = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
                     currentTranslateX = clamped.x;
                     currentTranslateY = clamped.y;
                     updateModalTransform(true);
                 }
-
                 if (isPanning) {
                     handlePanEnd(e.changedTouches[0]);
                 }
-
                 if (isSwipingDown && !isZoomed) {
                     isSwipingDown = false;
                     modalContent.classList.remove('swiping');
-
                     if (swipeDeltaY > 120) {
                         modalContent.classList.add('spring-back');
                         modalContent.style.transform = `translateY(${window.innerHeight}px)`;
@@ -1331,7 +1318,8 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                         closeModal(true);
                         setTimeout(() => {
                             modalContent.style.transform = '';
-                            modalContent.style.transition = 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+                            modalContent.style.transition =
+                                'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
                             modalContent.classList.remove('spring-back');
                             modalOverlay.style.opacity = '';
                             modalOverlay.style.transition = '';
@@ -1343,24 +1331,20 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                         modalOverlay.style.transition = 'opacity 0.3s ease-out';
                         setTimeout(() => {
                             modalContent.classList.remove('spring-back');
-                            modalContent.style.transition = 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+                            modalContent.style.transition =
+                                'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
                             modalOverlay.style.transition = '';
                         }, 400);
                     }
                     swipeDeltaY = 0;
                 }
-
                 if (e.touches.length < 2) {
                     pinchStartDistance = 0;
                 }
             }
 
-            // ───────────────────────────────────────
-            // KEYBOARD HANDLING
-            // ───────────────────────────────────────
             function handleKeyDown(e) {
                 if (!isModalOpen) return;
-
                 switch (e.key) {
                     case 'Escape':
                         e.preventDefault();
@@ -1375,7 +1359,8 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                         if (isZoomed) {
                             e.preventDefault();
                             currentTranslateX += 40;
-                            const clampedL = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
+                            const clampedL = clampTranslation(currentTranslateX, currentTranslateY,
+                                currentScale);
                             currentTranslateX = clampedL.x;
                             updateModalTransform(true);
                         }
@@ -1384,7 +1369,8 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                         if (isZoomed) {
                             e.preventDefault();
                             currentTranslateX -= 40;
-                            const clampedR = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
+                            const clampedR = clampTranslation(currentTranslateX, currentTranslateY,
+                                currentScale);
                             currentTranslateX = clampedR.x;
                             updateModalTransform(true);
                         }
@@ -1393,7 +1379,8 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                         if (isZoomed) {
                             e.preventDefault();
                             currentTranslateY += 40;
-                            const clampedU = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
+                            const clampedU = clampTranslation(currentTranslateX, currentTranslateY,
+                                currentScale);
                             currentTranslateY = clampedU.y;
                             updateModalTransform(true);
                         }
@@ -1402,7 +1389,8 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                         if (isZoomed) {
                             e.preventDefault();
                             currentTranslateY -= 40;
-                            const clampedD = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
+                            const clampedD = clampTranslation(currentTranslateX, currentTranslateY,
+                                currentScale);
                             currentTranslateY = clampedD.y;
                             updateModalTransform(true);
                         }
@@ -1410,9 +1398,6 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                 }
             }
 
-            // ───────────────────────────────────────
-            // MODAL BACKDROP CLICK TO CLOSE
-            // ───────────────────────────────────────
             function handleOverlayClick(e) {
                 if (!isModalOpen) return;
                 if (e.target === modalOverlay || e.target === modalContent) {
@@ -1420,37 +1405,27 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                 }
             }
 
-            // ───────────────────────────────────────
-            // RIPPLE EFFECT ON CREATOR BUTTON
-            // ───────────────────────────────────────
             function addRippleEffect(e) {
                 const btn = e.currentTarget;
                 const rect = btn.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height) * 2;
                 const x = e.clientX - rect.left - size / 2;
                 const y = e.clientY - rect.top - size / 2;
-
                 const ripple = document.createElement('span');
                 ripple.className = 'ripple';
                 ripple.style.width = `${size}px`;
                 ripple.style.height = `${size}px`;
                 ripple.style.left = `${x}px`;
                 ripple.style.top = `${y}px`;
-
                 btn.appendChild(ripple);
-
                 ripple.addEventListener('animationend', () => {
                     ripple.remove();
                 }, { once: true });
-
                 setTimeout(() => {
                     if (ripple.parentNode) ripple.remove();
                 }, 700);
             }
 
-            // ───────────────────────────────────────
-            // EVENT LISTENER SETUP
-            // ───────────────────────────────────────
             function setupEventListeners() {
                 modalCloseBtn.addEventListener('click', () => closeModal(true));
                 modalResetBtn.addEventListener('click', () => resetZoom(true));
@@ -1480,7 +1455,8 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                     clearTimeout(resizeTimeout);
                     resizeTimeout = setTimeout(() => {
                         if (isModalOpen && isZoomed) {
-                            const clamped = clampTranslation(currentTranslateX, currentTranslateY, currentScale);
+                            const clamped = clampTranslation(currentTranslateX, currentTranslateY,
+                                currentScale);
                             if (clamped.x !== currentTranslateX || clamped.y !== currentTranslateY) {
                                 currentTranslateX = clamped.x;
                                 currentTranslateY = clamped.y;
@@ -1491,14 +1467,10 @@ Website ini menggunakan <strong>MIT License</strong>. Dengan lisensi tersebut, s
                 }, { passive: true });
             }
 
-            // ───────────────────────────────────────
-            // INITIALIZATION
-            // ───────────────────────────────────────
             function init() {
                 buildGallery();
                 setupIntersectionObserver();
                 setupEventListeners();
-
                 console.log(
                     '%c📸 Premium Photo Gallery Ready %c| %c30 images %c| %cBrechQ',
                     'font-weight:bold;color:#a29bfe;',
